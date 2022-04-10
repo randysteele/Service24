@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Acct mgr<br></th>
+      <th>Branch mgr</th>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sites.each do |site| %>
+      <tr>
+        <td><%= site.name %></td>
+        <td><%= site.number %></td>
+        <td><%= site.phone %></td>
+        <td><%= site.address %></td>
+        <td><%= site.acct_mgr %></td>
+        <td><%= site.branch_mgr %></td>
+        
+        <td><%= link_to 'Edit', edit_client_site_path(@sites, @client) %></td>
+        <td><%= link_to 'Destroy', [site.client, site], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Site', new_client_site_path %>
+
+<h3>Workorders for <%=@sites.name%></h3>
+<% @workorder.each do |workorder| %>
+<%= workorder.id %>
+<% end %>

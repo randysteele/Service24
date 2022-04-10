@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @workorder.category %>
+</p>
+
+<p>
+  <strong>Caller:</strong>
+  <%= @workorder.caller %>
+</p>
+
+
+<p>
+  <strong>PO:</strong>
+  <%= @workorder.PO %>
+</p>
+
+<p>
+  <strong>Work requested:</strong>
+  <%= @workorder.work_requested %>
+</p>
+
+<p>
+  <strong>Schedule date:</strong>
+  <%= @workorder.schedule_date %>
+</p>
+
+<p>
+  <strong>Completion date:</strong>
+  <%= @workorder.completion_date %>
+</p>
+
+<%= link_to 'Edit', edit_client_site_workorder_path(@workorder) %> |
+<%= link_to 'Back', client_site_workorders_path %>

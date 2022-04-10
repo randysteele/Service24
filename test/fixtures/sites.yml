@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  number: 1
+  phone: 1
+  address: MyString
+  acct_mgr: MyString
+  branch_mgr: MyString
+  workorder: one
+
+two:
+  name: MyString
+  number: 1
+  phone: 1
+  address: MyString
+  acct_mgr: MyString
+  branch_mgr: MyString
+  workorder: two

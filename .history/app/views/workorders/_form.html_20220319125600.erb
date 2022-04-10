@@ -1,0 +1,48 @@
+<%= form_for @site.workorder do |form| %>
+  <% if workorder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(workorder.errors.count, "error") %> prohibited this workorder from being saved:</h2>
+
+      <ul>
+        <% workorder.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.select :category, Workorder::CATEGORY_OPTIONS, {} %>
+  </div>
+
+    <div class="field">
+    <%= form.label :caller %>
+    <%= form.text_field :caller %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :Customer_PO %>
+    <%= form.text_field :PO %>
+  </div>
+
+  <div class="field">
+    <%= form.label :work_requested %>
+    <%= form.text_area :work_requested %>
+  </div>
+
+  <div class="field">
+    <%= form.label :schedule_date %>
+    <%= form.datetime_select :schedule_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :completion_date %>
+    <%= form.datetime_select :completion_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Workorder' %>
+  </div>
+<% end %>
